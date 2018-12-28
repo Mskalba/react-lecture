@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/react-lesson-gh-page/precache-manifest.384cbc3f61c5178e735219441f2b8dbe.js"
+  "/react-lecture/precache-manifest.d0a9e427b364bbdfbb873447a0e6bff3.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/react-lesson-gh-page/index.html", {
+workbox.routing.registerNavigationRoute("/react-lecture/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
