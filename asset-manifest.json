@@ -1,15 +1,15 @@
 {
-  "main.css": "/react-lesson/static/css/main.20badcab.chunk.css",
-  "main.js": "/react-lesson/static/js/main.c3445f66.chunk.js",
-  "main.js.map": "/react-lesson/static/js/main.c3445f66.chunk.js.map",
-  "static/css/1.9e9f9ec1.chunk.css": "/react-lesson/static/css/1.9e9f9ec1.chunk.css",
-  "static/js/1.30767d05.chunk.js": "/react-lesson/static/js/1.30767d05.chunk.js",
-  "static/js/1.30767d05.chunk.js.map": "/react-lesson/static/js/1.30767d05.chunk.js.map",
-  "runtime~main.js": "/react-lesson/static/js/runtime~main.6a9ec72c.js",
-  "runtime~main.js.map": "/react-lesson/static/js/runtime~main.6a9ec72c.js.map",
-  "static/css/1.9e9f9ec1.chunk.css.map": "/react-lesson/static/css/1.9e9f9ec1.chunk.css.map",
-  "static/css/main.20badcab.chunk.css.map": "/react-lesson/static/css/main.20badcab.chunk.css.map",
-  "index.html": "/react-lesson/index.html",
-  "precache-manifest.ed802c0ab8c4cfc8fbcd41b8c2362fe6.js": "/react-lesson/precache-manifest.ed802c0ab8c4cfc8fbcd41b8c2362fe6.js",
-  "service-worker.js": "/react-lesson/service-worker.js"
+  "main.css": "/react-lesson-gh-page/static/css/main.20badcab.chunk.css",
+  "main.js": "/react-lesson-gh-page/static/js/main.006ecdea.chunk.js",
+  "main.js.map": "/react-lesson-gh-page/static/js/main.006ecdea.chunk.js.map",
+  "static/css/1.9e9f9ec1.chunk.css": "/react-lesson-gh-page/static/css/1.9e9f9ec1.chunk.css",
+  "static/js/1.30767d05.chunk.js": "/react-lesson-gh-page/static/js/1.30767d05.chunk.js",
+  "static/js/1.30767d05.chunk.js.map": "/react-lesson-gh-page/static/js/1.30767d05.chunk.js.map",
+  "runtime~main.js": "/react-lesson-gh-page/static/js/runtime~main.a9b5fcfa.js",
+  "runtime~main.js.map": "/react-lesson-gh-page/static/js/runtime~main.a9b5fcfa.js.map",
+  "static/css/1.9e9f9ec1.chunk.css.map": "/react-lesson-gh-page/static/css/1.9e9f9ec1.chunk.css.map",
+  "static/css/main.20badcab.chunk.css.map": "/react-lesson-gh-page/static/css/main.20badcab.chunk.css.map",
+  "index.html": "/react-lesson-gh-page/index.html",
+  "precache-manifest.384cbc3f61c5178e735219441f2b8dbe.js": "/react-lesson-gh-page/precache-manifest.384cbc3f61c5178e735219441f2b8dbe.js",
+  "service-worker.js": "/react-lesson-gh-page/service-worker.js"
 }
