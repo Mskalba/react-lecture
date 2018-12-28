@@ -17,30 +17,39 @@ class ListContainer extends React.Component {
     }
 
     render() {
+        let loginButton = null;
+        let logoutButton = null;
+        if(this.state.edited === 0) {
+            loginButton = <h2>Login</h2>;
+        } else {
+            logoutButton = <h2>Logout</h2>;
+        }
         return (
         <div>
-            Zeedytowano: {this.state.edited}
-            <ul>
+            {this.state.edited === 0 && <h2>Login</h2>}
+            {this.state.edited === 0 ?
+                <h2>Login</h2>: 
+                <h3>cokolwiek</h3>
+            }
+
+            {loginButton}
+
+            <h2>
+                Zeedytowano: {this.state.edited}
+            </h2>
+
+            {this.state.edited > 0 ?
+            <h2>Logout</h2> :
+            null}
+
+            {logoutButton}
+            <ul className="list-group">
+                {this.state.edited === 0 ?
                 <ListItem
                     handleChange={this.handleChange.bind(this)}
-                    name="Maciej"
-                />
-                <ListItem
-                    handleChange={this.handleChange.bind(this)}
-                    name="Kuba"
-                />
-                <ListItem
-                    handleChange={this.handleChange.bind(this)}
-                    name="Mateusz"
-                />
-                <ListItem
-                    handleChange={this.handleChange.bind(this)}
-                    name="Joanna"
-                />
-                <ListItem
-                    handleChange={this.handleChange.bind(this)}
-                    name="Cokolwiek"
-                />
+                    name={`Maciej ${this.state.edited}`}
+                /> :
+                null}
             </ul>
         </div>
         );
