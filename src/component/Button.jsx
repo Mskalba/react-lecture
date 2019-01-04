@@ -1,7 +1,14 @@
 import React from "react";
 
 function Button(props) {
-    return <button className="btn btn-secondary" onClick={props.handleChange} type={props.type || 'button'}>{props.text}</button>
+    let {text, handleChange} = props;
+    return (
+        <div>
+            <button className="btn btn-secondary" onClick={handleChange} type={props.type || 'button'}>{text}</button>
+        </div>
+        
+    )
+    
 }
 
 export default Button;
