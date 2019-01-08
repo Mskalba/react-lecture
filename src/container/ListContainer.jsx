@@ -2,6 +2,7 @@ import React from "react";
 import ListItem from "../component/ListItem";
 import FormContainer from "./FormContainer";
 import axios from "axios";
+import { Route, Link } from 'react-router-dom';
 
 class ListContainer extends React.Component {
     constructor() {
@@ -43,6 +44,7 @@ class ListContainer extends React.Component {
         }
         return (
         <div>
+            <Link to="/">Home go</Link>
             <FormContainer onTodosChange={this.getTodoData.bind(this)} />
             {loginButton}
             <h2>
