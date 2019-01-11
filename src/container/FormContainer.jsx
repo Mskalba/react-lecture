@@ -34,7 +34,7 @@ class FormContainer extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit.bind(this)}>
                 <label>
                     Title
                 </label>
