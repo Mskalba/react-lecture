@@ -17,7 +17,7 @@ class FormContainer extends React.Component {
         });
     }
 
-    handleSubmit(event) {
+    handleSubmit = (event) => {
         event.preventDefault();
         axios.post('http://195.181.210.249:3000/todo/', this.state)
             .then(() => {
@@ -34,7 +34,7 @@ class FormContainer extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit.bind(this)}>
+            <form onSubmit={this.handleSubmit}>
                 <label>
                     Title
                 </label>
