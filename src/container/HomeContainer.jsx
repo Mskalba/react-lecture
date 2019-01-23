@@ -7,15 +7,7 @@ class HomeContainer extends React.Component {
         return (
         <>
             HOME
-            <NavigationContainer>
-                <Link to="/">Linkuj do mnie</Link>
-                <Link to="/">Linkuj do mnie</Link>
-                <Link to="/">Linkuj do mnie</Link>
-                <Link to="/">Linkuj do mnie</Link>
-                <Link to="/">Linkuj do mnie</Link>
-                <Link to="/">Linkuj do mnie</Link>
-                <Link to="/">Linkuj do mnie</Link>
-            </NavigationContainer>
+            <NavigationContainer />
         </>
         );
     }

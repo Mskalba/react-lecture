@@ -1,5 +1,7 @@
 import React from "react";
-import axios from "axios";
+import { connect } from 'react-redux';
+import {Link} from 'react-router-dom';
+import { addTodo } from './../actions';
 
 class FormContainer extends React.Component {
     constructor() {
@@ -19,12 +21,8 @@ class FormContainer extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        axios.post('http://195.181.210.249:3000/todo/', this.state)
-            .then(() => {
-                if(this.props.onTodosChange && typeof this.props.onTodosChange === 'function') {
-                    this.props.onTodosChange();
-                } 
-            });
+        
+        this.props.addTodo(this.state);
 
         this.setState({
             title: '',
@@ -34,29 +32,41 @@ class FormContainer extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit.bind(this)}>
-                <label>
-                    Title
-                </label>
-                <input
-                    name='title'
-                    value={this.state.title}
-                    onChange={this.handleFormChange.bind(this)}
-                />
-                <br/>
-                <label>
-                    Author
-                </label>
-                <input
-                    name='author'
-                    value={this.state.author}
-                    onChange={this.handleFormChange.bind(this)}
-                />
-                <br />
-                <input type="submit" value="Add" />
-            </form>
+            <>
+                {this.props.menu.map(el => (
+                    <div key={el}>
+                        <Link to="/lista">{el}</Link>
+                    </div>
+                ))}
+                <form onSubmit={this.handleSubmit.bind(this)}>
+                    <label>
+                        Title
+                    </label>
+                    <input
+                        name='title'
+                        value={this.state.title}
+                        onChange={this.handleFormChange.bind(this)}
+                    />
+                    <br/>
+                    <label>
+                        Author
+                    </label>
+                    <input
+                        name='author'
+                        value={this.state.author}
+                        onChange={this.handleFormChange.bind(this)}
+                    />
+                    <br />
+                    <input type="submit" value="Add" />
+                </form>
+            </>
         )
     }
 }
 
-export default FormContainer;
+const mapStateToProps = state => ({
+    menu: state.menu,
+    message: state.todos.message,
+})
+
+export default connect(mapStateToProps, {addTodo})(FormContainer);

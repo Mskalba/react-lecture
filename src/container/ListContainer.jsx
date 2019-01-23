@@ -1,8 +1,9 @@
 import React from "react";
 import ListItem from "../component/ListItem";
 import FormContainer from "./FormContainer";
-import axios from "axios";
-import { Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { fetchTodos } from './../actions';
 
 class ListContainer extends React.Component {
     constructor() {
@@ -15,17 +16,7 @@ class ListContainer extends React.Component {
     }
 
     componentDidMount() {
-        this.getTodoData();
-    }
-
-    getTodoData() {
-        axios.get('http://195.181.210.249:3000/todo/')
-            .then(response => response.data)
-            .then(data => {
-                this.setState({
-                    todos: data
-                });
-            })
+        this.props.fetchTodos();
     }
 
     handleChange = () => {
@@ -35,25 +26,16 @@ class ListContainer extends React.Component {
     }
 
     render() {
-        let loginButton = null;
-        let logoutButton = null;
-        if(this.state.edited === 0) {
-            loginButton = <h2>Login</h2>;
-        } else {
-            logoutButton = <h2>Logout</h2>;
-        }
         return (
         <div>
-            <Link to="/">Home go</Link>
-            <FormContainer onTodosChange={this.getTodoData.bind(this)} />
-            {loginButton}
+            <FormContainer />
+            
             <h2>
                 Zeedytowano: {this.state.edited}
             </h2>
-            {logoutButton}
 
             <ul className="list-group">
-                {this.state.todos.map(el => 
+                {this.props.todos.map(el => 
                     <ListItem
                         key={el.id}
                         handleChange={this.handleChange.bind(this, el.id)}
@@ -66,4 +48,9 @@ class ListContainer extends React.Component {
     }
 }
 
-export default ListContainer;
+const mapStateToProps = state => ({
+    todos: state.todos.items,
+    error: state.todos.error,
+})
+
+export default connect(mapStateToProps, {fetchTodos})(ListContainer);
